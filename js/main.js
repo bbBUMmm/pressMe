@@ -9,7 +9,7 @@ import { createScene } from './scene3d.js';
 export const CONFIG = {
   code: 'refrmdao',
   hintAfterFails: 1,
-  question: 'idk what is your name?',
+  question: 'idk... what is your name?',
   subtitle: '(відповідь напиши у тіндер чаті :) I am waiting I guess)',
   words: {
     storm: ['VOID','GHOST','NONE','BLANK','STATIC','VOID','GHOST','ZERO','NOTHING'],

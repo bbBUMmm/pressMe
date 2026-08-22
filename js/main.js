@@ -289,7 +289,7 @@ function startShow(){
   phase = 'show';
   showT0 = performance.now()/1000;
   audio.bedLevel(0.05, 3);
-  audio.ramp(0.3, 0.5);
+  audio.ramp(0.20, 2.5);
 }
 
 /* ---- controls ---- */

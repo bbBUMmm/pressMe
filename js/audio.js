@@ -133,19 +133,32 @@ export function createAudio(){
     s.start(t0); s.stop(t0 + 0.12);
   }
 
-  function riser(dur = 4, v = 0.22){
+  function riser(dur = 4, v = 0.12){
     if(!ready) return;
+
     const t0 = now();
-    const o = ctx.createOscillator(), g = ctx.createGain(), lp = ctx.createBiquadFilter();
-    o.type = 'sawtooth';
-    o.frequency.setValueAtTime(70, t0);
-    o.frequency.exponentialRampToValueAtTime(1500, t0 + dur);
-    lp.type = 'lowpass'; lp.frequency.value = 3000;
+    const o = ctx.createOscillator();
+    const g = ctx.createGain();
+    const lp = ctx.createBiquadFilter();
+
+    o.type = 'sine';
+    o.frequency.setValueAtTime(55, t0);
+    o.frequency.exponentialRampToValueAtTime(110, t0 + dur);
+
+    lp.type = 'lowpass';
+    lp.frequency.value = 500;
+
     g.gain.setValueAtTime(0.0001, t0);
-    g.gain.exponentialRampToValueAtTime(v, t0 + dur*0.92);
-    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur + 0.5);
-    o.connect(lp); lp.connect(g); g.connect(master); g.connect(verb);
-    o.start(t0); o.stop(t0 + dur + 0.6);
+    g.gain.exponentialRampToValueAtTime(v, t0 + dur * 0.8);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur + 1);
+
+    o.connect(lp);
+    lp.connect(g);
+    g.connect(master);
+    g.connect(verb);
+
+    o.start(t0);
+    o.stop(t0 + dur + 1.1);
   }
 
   /* ---------- pad ---------- */

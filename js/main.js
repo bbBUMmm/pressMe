@@ -9,13 +9,13 @@ import { createScene } from './scene3d.js';
 export const CONFIG = {
   code: 'refrmdao',
   hintAfterFails: 1,
-  question: 'What is your name?',
+  question: 'idk what is your name?',
   subtitle: '(відповідь напиши у тіндер чаті :) I am waiting I guess)',
   words: {
-    storm: ['CHAOS','STATIC','NO SIGNAL','RUNWAY','FLASH','ШТОРМ','ELECTRIC','LOOK 01','NOISE','ГРІМ'],
-    trip:  ['MIRROR','LIQUID','SILK','MODE','KALEIDO','ATELIER','COUTURE','FRACTAL','ГЛИБИНА','DREAM'],
-    melt:  ['MELT','SLOWER','WARM','SOFT FOCUS','ПОВІЛЬНІШЕ'],
-    bloom: ['тепло','світло','ніжно','тиша','breathe','ти'],
+    storm: ['VOID','GHOST','NONE','BLANK','STATIC','VOID','GHOST','ZERO','NOTHING'],
+    trip:  ['VOID','BLANK','GHOST','NONE','EMPTY','VOID','STATIC','NULL','ZERO'],
+    melt:  ['FADE','VOID','GHOST','BLUR','NONE','BLANK','FADE','EMPTY'],
+    bloom: ['VOID','GHOST','BLANK','NONE','EMPTY','ZERO','VOID','SILENCE'],
   },
 };
 
@@ -99,28 +99,28 @@ function sample(t){
 const CUES = [
   [0.00, () => { audio.impact(); type.flash('rgba(255,255,255,.95)', 110); fx.spark(40);
                  fx.bolt(); fx.bolt(); fx.ring(null,null,null,1.2);
-                 type.runway(pick(CONFIG.words.storm)); fx.setPhase('01 — STORM'); }],
+                 type.runway(pick(CONFIG.words.storm)); fx.setPhase(''); }],
   [0.30, () => { fx.glitch(12); type.cut('#0a0b12','x',420); }],
-  [0.90, () => { type.stack('RUNWAY'); fx.bolt(); }],
+  [0.90, () => { type.stack(''); fx.bolt(); }],
   [2.10, () => { type.cut('#0e1430','y',520); type.runway(pick(CONFIG.words.storm)); }],
-  [3.20, () => { type.serif('Look 01'); fx.ring(); }],
-  [4.60, () => { type.cut('#5b1bd6','x',560); fx.glitch(16); type.runway('ELECTRIC'); }],
-  [6.40, () => { type.flash('rgba(190,215,255,.85)', 120); audio.riser(3.2); fx.setPhase('02 — TRIP'); }],
-  [6.60, () => { type.cut('#ff2e92','y',600); type.stack('MIRROR'); }],
-  [8.20, () => { type.serif('Kaleido'); fx.ring(null,null,null,1.6,'255,120,190'); }],
+  [3.20, () => { type.serif(''); fx.ring(); }],
+  [4.60, () => { type.cut('#5b1bd6','x',560); fx.glitch(16); type.runway(''); }],
+  [6.40, () => { type.flash('rgba(190,215,255,.85)', 120); audio.riser(3.2); fx.setPhase(''); }],
+  [6.60, () => { type.cut('#ff2e92','y',600); type.stack(''); }],
+  [8.20, () => { type.serif(''); fx.ring(null,null,null,1.6,'255,120,190'); }],
   [10.0, () => { type.cut('#2a1160','x',640); type.runway(pick(CONFIG.words.trip)); }],
-  [12.0, () => { audio.riser(2.6); type.stack('SILK', 4); }],
+  [12.0, () => { audio.riser(2.6); type.stack('', 4); }],
   [13.6, () => { type.flash('rgba(255,180,210,.8)', 140); }],
-  [14.4, () => { fx.setPhase('03 — MELT'); audio.pad([174.61, 261.63, 311.13, 415.30], 12, 0.085);
-                 type.serif('melt'); fx.ring(null,null,null,2.0,'255,170,190'); }],
-  [16.6, () => { type.runway('SOFT FOCUS'); }],
+  [14.4, () => { fx.setPhase('T'); audio.pad([174.61, 261.63, 311.13, 415.30], 12, 0.085);
+                 type.serif(''); fx.ring(null,null,null,2.0,'255,170,190'); }],
+  [16.6, () => { type.runway(''); }],
   [18.2, () => { type.soft(pick(CONFIG.words.melt).toLowerCase()); audio.bell(659.25); }],
   [20.4, () => { audio.pad([138.59, 207.65, 261.63, 349.23], 12, 0.09); audio.bell(523.25);
-                 fx.setPhase('04 — BLOOM'); type.serif('bloom'); }],
-  [22.6, () => { type.soft('тепло'); audio.bell(783.99); }],
-  [24.6, () => { type.soft('світло'); audio.bell(880.00); }],
+                 fx.setPhase(''); type.serif('bloom'); }],
+  [22.6, () => { type.soft(''); audio.bell(783.99); }],
+  [24.6, () => { type.soft(''); audio.bell(880.00); }],
   [26.2, () => { audio.pad([103.83, 207.65, 261.63, 311.13, 392.00], 30, 0.10); audio.bell(659.25); }],
-  [27.6, () => { type.soft('ти'); audio.bell(1046.5); }],
+  [27.6, () => { type.soft('you'); audio.bell(1046.5); }],
   [29.4, () => { reveal(); audio.bell(523.25); setTimeout(()=>audio.bell(659.25), 420);
                  setTimeout(()=>audio.bell(783.99), 900); }],
 ];

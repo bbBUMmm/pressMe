@@ -106,10 +106,6 @@ export function createFx(canvas, quality = 1){
     ctx.fillStyle = 'rgba(255,255,255,.6)';
     ctx.font = `500 ${fs}px "Inter", system-ui, sans-serif`;
     ctx.letterSpacing && (ctx.letterSpacing = '2px');
-    ctx.fillText('REFRMDAO', m + 2, m + fs + 10);
-    ctx.textAlign = 'right';
-    ctx.fillText('SS/26', W - m - 2, m + fs + 10);
-    ctx.textAlign = 'left';
     ctx.fillText(phaseLabel, m + 2, H - m - 12);
     ctx.textAlign = 'right';
     ctx.font = `500 ${fs}px ui-monospace, SFMono-Regular, Menlo, monospace`;

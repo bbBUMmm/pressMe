@@ -11,12 +11,7 @@ export const CONFIG = {
   hintAfterFails: 1,
   question: 'idk... what is your name?',
   subtitle: '(відповідь напиши у тіндер чаті :) I am waiting I guess)',
-  words: {
-    storm: ['VOID','GHOST','NONE','BLANK','STATIC','VOID','GHOST','ZERO','NOTHING'],
-    trip:  ['VOID','BLANK','GHOST','NONE','EMPTY','VOID','STATIC','NULL','ZERO'],
-    melt:  ['FADE','VOID','GHOST','BLUR','NONE','BLANK','FADE','EMPTY'],
-    bloom: ['VOID','GHOST','BLANK','NONE','EMPTY','ZERO','VOID','SILENCE'],
-  },
+  phrase: 'генерую запитання...',   // єдина фраза, яка блимає протягом усього показу
 };
 
 /* ================= helpers ================= */
@@ -68,17 +63,17 @@ if(REDUCED){ type.flash = () => {}; fx.glitch = () => {}; }
 const K = [
  //  t     chaos kal  warm melt zoom aber grain fade  knot cage shrd ribb ptl  leak brst  mark half p2d  veil expo
  [ 0.0,  1.00,0.10,0.00,0.05,2.80,1.00,0.10,0.00,  0.00,0.00,0.00,0.00,0.00,0.00,1.00,  0.00,0.00,0.00,0.00,0.86],
- [ 0.5,  1.00,0.14,0.00,0.08,2.40,1.00,0.10,1.00,  0.85,0.24,0.85,0.00,0.00,0.00,0.55,  0.00,0.00,0.00,0.00,0.86],
- [ 2.0,  1.00,0.24,0.00,0.14,2.10,0.95,0.09,1.00,  1.00,0.34,0.95,0.00,0.00,0.04,0.12,  0.55,0.00,0.00,0.00,0.88],
- [ 6.5,  0.95,0.50,0.08,0.32,1.75,0.88,0.08,1.00,  1.00,0.42,0.72,0.00,0.00,0.12,0.05,  0.75,0.16,0.00,0.00,0.90],
- [10.0,  0.90,0.82,0.20,0.58,1.50,0.82,0.07,1.00,  1.00,0.24,0.62,0.05,0.00,0.20,0.03,  0.80,0.34,0.00,0.00,0.94],
- [14.5,  0.78,1.00,0.38,0.90,1.26,0.70,0.06,1.00,  0.92,0.09,0.50,0.22,0.04,0.30,0.02,  0.80,0.30,0.06,0.00,0.98],
- [18.0,  0.58,0.86,0.55,1.00,1.10,0.50,0.06,1.00,  0.76,0.05,0.34,0.60,0.20,0.42,0.01,  0.72,0.18,0.16,0.00,1.00],
- [22.0,  0.38,0.62,0.74,0.88,0.98,0.30,0.05,1.00,  0.54,0.00,0.20,0.88,0.55,0.55,0.00,  0.60,0.06,0.34,0.02,1.02],
- [25.0,  0.22,0.44,0.87,0.66,0.90,0.18,0.05,1.00,  0.38,0.00,0.08,1.00,0.80,0.62,0.00,  0.44,0.02,0.52,0.08,1.04],
- [27.5,  0.11,0.28,0.95,0.46,0.83,0.09,0.04,1.00,  0.24,0.00,0.02,0.95,0.95,0.60,0.00,  0.26,0.00,0.64,0.18,1.05],
- [30.0,  0.05,0.15,1.00,0.32,0.76,0.04,0.04,1.00,  0.12,0.00,0.00,0.72,0.90,0.48,0.00,  0.08,0.00,0.60,0.38,1.06],
- [33.0,  0.02,0.08,1.00,0.22,0.71,0.02,0.03,1.00,  0.06,0.00,0.00,0.52,0.78,0.36,0.00,  0.00,0.00,0.50,0.50,1.06],
+ [ 0.25,  1.00,0.14,0.00,0.08,2.40,1.00,0.10,1.00,  0.85,0.24,0.85,0.00,0.00,0.00,0.55,  0.00,0.00,0.00,0.00,0.86],
+ [ 0.90,  1.00,0.24,0.00,0.14,2.10,0.95,0.09,1.00,  1.00,0.34,0.95,0.00,0.00,0.04,0.12,  0.55,0.00,0.00,0.00,0.88],
+ [ 2.95,  0.95,0.50,0.08,0.32,1.75,0.88,0.08,1.00,  1.00,0.42,0.72,0.00,0.00,0.12,0.05,  0.75,0.16,0.00,0.00,0.90],
+ [ 4.55,  0.90,0.82,0.20,0.58,1.50,0.82,0.07,1.00,  1.00,0.24,0.62,0.05,0.00,0.20,0.03,  0.80,0.34,0.00,0.00,0.94],
+ [ 6.60,  0.78,1.00,0.38,0.90,1.26,0.70,0.06,1.00,  0.92,0.09,0.50,0.22,0.04,0.30,0.02,  0.80,0.30,0.06,0.00,0.98],
+ [ 8.20,  0.58,0.86,0.55,1.00,1.10,0.50,0.06,1.00,  0.76,0.05,0.34,0.60,0.20,0.42,0.01,  0.72,0.18,0.16,0.00,1.00],
+ [10.00,  0.38,0.62,0.74,0.88,0.98,0.30,0.05,1.00,  0.54,0.00,0.20,0.88,0.55,0.55,0.00,  0.60,0.06,0.34,0.02,1.02],
+ [11.35,  0.22,0.44,0.87,0.66,0.90,0.18,0.05,1.00,  0.38,0.00,0.08,1.00,0.80,0.62,0.00,  0.44,0.02,0.52,0.08,1.04],
+ [12.30,  0.11,0.28,0.95,0.46,0.83,0.09,0.04,1.00,  0.24,0.00,0.02,0.95,0.95,0.60,0.00,  0.26,0.00,0.64,0.18,1.05],
+ [13.30,  0.05,0.15,1.00,0.32,0.76,0.04,0.04,1.00,  0.12,0.00,0.00,0.72,0.90,0.48,0.00,  0.08,0.00,0.60,0.38,1.06],
+ [14.80,  0.02,0.08,1.00,0.22,0.71,0.02,0.03,1.00,  0.06,0.00,0.00,0.52,0.78,0.36,0.00,  0.00,0.00,0.50,0.50,1.06],
  [90.0,  0.01,0.05,1.00,0.18,0.66,0.01,0.03,1.00,  0.03,0.00,0.00,0.42,0.70,0.30,0.00,  0.00,0.00,0.45,0.52,1.06],
 ];
 const KEYS = ['chaos','kaleido','warm','melt','zoom','aberr','grain','fade',
@@ -99,38 +94,37 @@ function sample(t){
 const CUES = [
   [0.00, () => { audio.impact(); type.flash('rgba(255,255,255,.95)', 110); fx.spark(40);
                  fx.bolt(); fx.bolt(); fx.ring(null,null,null,1.2);
-                 type.runway(pick(CONFIG.words.storm)); fx.setPhase(''); }],
-  [0.30, () => { fx.glitch(12); type.cut('#0a0b12','x',420); }],
-  [0.90, () => { type.stack(''); fx.bolt(); }],
-  [2.10, () => { type.cut('#0e1430','y',520); type.runway(pick(CONFIG.words.storm)); }],
-  [3.20, () => { type.serif(''); fx.ring(); }],
-  [4.60, () => { type.cut('#5b1bd6','x',560); fx.glitch(16); type.runway(''); }],
-  [6.40, () => { type.flash('rgba(190,215,255,.85)', 120); audio.riser(3.2); fx.setPhase(''); }],
-  [6.60, () => { type.cut('#ff2e92','y',600); type.stack(''); }],
-  [8.20, () => { type.serif(''); fx.ring(null,null,null,1.6,'255,120,190'); }],
-  [10.0, () => { type.cut('#2a1160','x',640); type.runway(pick(CONFIG.words.trip)); }],
-  [12.0, () => { audio.riser(2.6); type.stack('', 4); }],
-  [13.6, () => { type.flash('rgba(255,180,210,.8)', 140); }],
-  [14.4, () => { fx.setPhase('T'); audio.pad([174.61, 261.63, 311.13, 415.30], 12, 0.085);
-                 type.serif(''); fx.ring(null,null,null,2.0,'255,170,190'); }],
-  [16.6, () => { type.runway(''); }],
-  [18.2, () => { type.soft(pick(CONFIG.words.melt).toLowerCase()); audio.bell(659.25); }],
-  [20.4, () => { audio.pad([138.59, 207.65, 261.63, 349.23], 12, 0.09); audio.bell(523.25);
-                 fx.setPhase(''); type.serif('bloom'); }],
-  [22.6, () => { type.soft(''); audio.bell(783.99); }],
-  [24.6, () => { type.soft(''); audio.bell(880.00); }],
-  [26.2, () => { audio.pad([103.83, 207.65, 261.63, 311.13, 392.00], 30, 0.10); audio.bell(659.25); }],
-  [27.6, () => { type.soft('you'); audio.bell(1046.5); }],
-  [29.4, () => { reveal(); audio.bell(523.25); setTimeout(()=>audio.bell(659.25), 420);
-                 setTimeout(()=>audio.bell(783.99), 900); }],
+                 type.runway(CONFIG.phrase); fx.setPhase(''); }],
+  [0.15, () => { fx.glitch(12); type.cut('#0a0b12','x',340); }],
+  [0.40, () => { type.stack(CONFIG.phrase, 4); fx.bolt(); }],
+  [0.95, () => { type.cut('#0e1430','y',420); type.runway(CONFIG.phrase); }],
+  [1.45, () => { type.serif(CONFIG.phrase); fx.ring(); }],
+  [2.10, () => { type.cut('#5b1bd6','x',440); fx.glitch(16); type.runway(CONFIG.phrase); }],
+  [2.90, () => { type.flash('rgba(190,215,255,.85)', 120); audio.riser(1.5); }],
+  [3.00, () => { type.cut('#ff2e92','y',460); type.stack(CONFIG.phrase, 4); }],
+  [3.70, () => { type.serif(CONFIG.phrase); fx.ring(null,null,null,1.6,'255,120,190'); }],
+  [4.55, () => { type.cut('#2a1160','x',480); type.runway(CONFIG.phrase); }],
+  [5.45, () => { audio.riser(1.3); type.stack(CONFIG.phrase, 3); }],
+  [6.20, () => { type.flash('rgba(255,180,210,.8)', 140); }],
+  [6.55, () => { audio.pad([174.61, 261.63, 311.13, 415.30], 6, 0.085);
+                 type.serif(CONFIG.phrase); fx.ring(null,null,null,2.0,'255,170,190'); }],
+  [7.55, () => { type.runway(CONFIG.phrase); }],
+  [8.25, () => { type.soft(CONFIG.phrase); audio.bell(659.25); }],
+  [9.25, () => { audio.pad([138.59, 207.65, 261.63, 349.23], 6, 0.09); audio.bell(523.25);
+                 type.serif(CONFIG.phrase); }],
+  [10.25, () => { type.soft(CONFIG.phrase); audio.bell(783.99); }],
+  [11.15, () => { type.soft(CONFIG.phrase); audio.bell(880.00); }],
+  [11.90, () => { audio.pad([103.83, 207.65, 261.63, 311.13, 392.00], 20, 0.10); audio.bell(659.25); }],
+  [12.40, () => { reveal(); audio.bell(523.25); setTimeout(()=>audio.bell(659.25), 380);
+                 setTimeout(()=>audio.bell(783.99), 820); }],
 ];
 let cueIdx = 0;
 
 /* ================= beat engine ================= */
 let beatT = 0, beatN = 0;
 function beats(dt, t){
-  if(t > 22) return;
-  const iv = t < 6.4 ? 0.5 : t < 14.4 ? 0.44 : 0.72;
+  if(t > 10.2) return;
+  const iv = t < 2.9 ? 0.46 : t < 6.55 ? 0.40 : 0.60;
   beatT -= dt;
   if(beatT > 0) return;
   beatT = iv;
@@ -138,17 +132,16 @@ function beats(dt, t){
   const heat = state.chaos;
   if(beatN % 2 === 1) audio.kick(0.5 + heat*0.6);
   audio.tick(0.35 + heat*0.5);
-  if(t < 14.4){
+  if(t < 6.55){
     if(beatN % 4 === 0) fx.ring(null, null, null, 0.9);
     if(Math.random() < 0.55*heat) fx.streak();
     if(Math.random() < 0.35*heat) fx.glitch(4 + Math.random()*6);
-    if(t < 6.4 && Math.random() < 0.4) fx.bolt();
-    if(Math.random() < 0.5){
-      const pool = t < 6.4 ? CONFIG.words.storm : CONFIG.words.trip;
-      Math.random() < 0.55 ? type.edge(pick(pool)) : type.runway(pick(pool));
+    if(t < 2.9 && Math.random() < 0.4) fx.bolt();
+    if(Math.random() < 0.34){
+      Math.random() < 0.55 ? type.edge(CONFIG.phrase) : type.runway(CONFIG.phrase);
     }
-  } else if(t < 22){
-    if(Math.random() < 0.4) type.edge(pick(CONFIG.words.melt));
+  } else if(t < 10.2){
+    if(Math.random() < 0.3) type.edge(CONFIG.phrase);
     if(Math.random() < 0.25) fx.ring(null, null, null, 1.8, '255,190,200');
   }
 }
@@ -157,11 +150,25 @@ function beats(dt, t){
 function reveal(){
   const q = el.final.querySelector('.q');
   q.innerHTML = '';
-  [...CONFIG.question].forEach((ch, i) => {
-    const sp = document.createElement('span');
-    sp.textContent = ch === ' ' ? '\u00A0' : ch;
-    sp.style.animationDelay = (i*0.045 + 0.15) + 's';
-    q.appendChild(sp);
+  let i = 0;
+  CONFIG.question.split(' ').forEach((word, wi, arr) => {
+    const w = document.createElement('span');
+    w.className = 'word';
+    [...word].forEach(ch => {
+      const sp = document.createElement('span');
+      sp.textContent = ch;
+      sp.style.animationDelay = (i*0.028 + 0.1) + 's';
+      i++;
+      w.appendChild(sp);
+    });
+    q.appendChild(w);
+    if(wi < arr.length - 1){
+      const gap = document.createElement('span');
+      gap.className = 'word';
+      gap.innerHTML = '<span style="animation-delay:' + (i*0.028 + 0.1) + 's">\u00A0</span>';
+      i++;
+      q.appendChild(gap);
+    }
   });
   el.final.querySelector('.sub').textContent = CONFIG.subtitle;
   el.final.classList.add('on');
@@ -199,7 +206,8 @@ function frame(now){
     bg.v.show = 0;
     bg.render(now);
   } else {
-    const t = now - showT0;
+    const t = (now - showT0) * 0.8;
+    window.__t = t;
     const s = sample(t);
     Object.assign(bg.v, s);
     bg.v.show = clamp(t/0.3, 0, 1);

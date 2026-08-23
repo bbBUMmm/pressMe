@@ -20,7 +20,7 @@ export function createType(wordsEl, cutsEl){
     return make(cls, text, {
       top: rnd(18, 68) + '%',
       left: '50%',
-      fontSize: 'clamp(40px,' + rnd(8, 15).toFixed(1) + 'vw, 190px)',
+      fontSize: 'clamp(17px,' + rnd(5.5, 8.5).toFixed(1) + 'vw, 78px)',
       '--rot': rnd(-3, 3).toFixed(2) + 'deg',
       animationDuration: rnd(.5, .9).toFixed(2) + 's',
     }, 1100);
@@ -43,7 +43,7 @@ export function createType(wordsEl, cutsEl){
     for(let i=0;i<n;i++) html += `<span style="--i:${i}">${text}</span>`;
     return make('w-stack' + (Math.random() < 0.5 ? ' w-outline' : ''), html, {
       top: rnd(6, 58) + '%', left: '0', width: '100%',
-      fontSize: 'clamp(20px,' + rnd(4, 7).toFixed(1) + 'vw, 78px)',
+      fontSize: 'clamp(13px,' + rnd(3.4, 5.4).toFixed(1) + 'vw, 50px)',
     }, 1500);
   }
 
@@ -51,7 +51,7 @@ export function createType(wordsEl, cutsEl){
   function serif(text){
     return make('w-serif', text, {
       top: rnd(28, 62) + '%', left: '50%',
-      fontSize: 'clamp(30px,' + rnd(6, 12).toFixed(1) + 'vw, 150px)',
+      fontSize: 'clamp(18px,' + rnd(4.5, 7.0).toFixed(1) + 'vw, 66px)',
     }, 2600);
   }
 
@@ -59,7 +59,7 @@ export function createType(wordsEl, cutsEl){
   function soft(text){
     return make('w-soft', text, {
       top: rnd(30, 58) + '%', left: '50%',
-      fontSize: 'clamp(30px,' + rnd(7, 11).toFixed(1) + 'vw, 130px)',
+      fontSize: 'clamp(18px,' + rnd(5.0, 7.5).toFixed(1) + 'vw, 62px)',
     }, 3400);
   }
 
